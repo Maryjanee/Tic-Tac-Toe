@@ -2,9 +2,14 @@
 =begin
 Game Pseudocode
 1.Create board
-2.Get user input 
+2.Get user input from players
 3.Track players and turns
 4.Check if board is full
+5.check for valid move
+6.check positions for each player
+7.check for winner, loser and draw
+8. display output
+
 =end
 
 class Board
