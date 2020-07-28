@@ -14,8 +14,6 @@ Game Pseudocode
 
 class Board
     attr_reader:board
-    @@player_1
-    @@player_2
     
     def initialize
       reset_board
@@ -37,8 +35,14 @@ class Board
     end
     
     def get_user_input
-      puts
+      puts "Enter first player's Name"
+      player_one = gets.chomp
+      puts "Enter second player's Name"
+      player_two = gets.chomp
+      puts "#{player_one} you are X \n#{player_two} you are O"
     end
 end
+
 board1 = Board.new()
 puts board1.display_board
+puts board1.get_user_input
