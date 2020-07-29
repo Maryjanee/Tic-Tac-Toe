@@ -31,6 +31,10 @@ class Board
     puts '-------------'
   end
 
+end
+
+class players < Board
+  
   def start_game
     puts "Enter first player's Name"
     player_one = gets.chomp
@@ -39,7 +43,7 @@ class Board
     puts "#{player_one} you are X \n#{player_two} you are O"
     @player_count = 0
   end
-
+  
   def player_selection(player)
     puts "It's the #{player}'s turn, Please Choose a number between 1 - 9 "
     input = gets.chomp
@@ -48,7 +52,6 @@ class Board
       puts 'this is not a number'
       player_selection
     end
-
     sentinel = true
     while sentinel
       if selection.is_a?(Integer) == false || selection.between?(1, 9) == false
