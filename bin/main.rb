@@ -43,6 +43,14 @@ class Player
     @@gameBoard = gameBoard
   end
   
+  def current_player()
+    return @@play_counter % 2 == 0 ? @@player_one : @@player_two
+  end
+  
+  def is_valid_move(index)
+    return @@gameBoard.board[index - 1] == ' ' ? true : false
+  end
+  
   def start_game
     puts "Enter first player's Name"
     @@player_one = gets.chomp
@@ -59,12 +67,25 @@ class Player
       puts 'Invalid! Please choose a number between 1 - 9'
        input = gets.chomp.to_i
     end
+    
+    if is_valid_move(input)
+    
+
+    else
+      puts "Invalid move, try again."
+      player_selection
+    end
+
+    @@gameBoard.display_board
   end
 end
   
  
 
 board1 = Board.new
-puts board1.display_board
-puts board1.user_input
-puts board1.player_selection
+player = Player.new(board1)
+player.start_game
+player.player_selection
+
+
+
