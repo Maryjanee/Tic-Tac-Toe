@@ -33,15 +33,23 @@ class Board
 
 end
 
-class players < Board
+class Player
+  PLAYER_ONE_TAG = 'X'
+  PLAYER_TWO_TAG = 'O'
+  
+  @@play_counter = 0
+
+  def initialize(gameBoard)
+    @@gameBoard = gameBoard
+  end
   
   def start_game
     puts "Enter first player's Name"
-    player_one = gets.chomp
+    @@player_one = gets.chomp
     puts "Enter second player's Name"
-    player_two = gets.chomp
-    puts "#{player_one} you are X \n#{player_two} you are O"
-    @player_count = 0
+    @@player_two = gets.chomp
+    puts "#{@@player_one} you are #{PLAYER_ONE_TAG} \n#{@@player_two} you are #{PLAYER_TWO_TAG}"
+  
   end
   
   def player_selection(player)
