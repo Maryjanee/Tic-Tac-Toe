@@ -18,7 +18,7 @@ class Board
   end
 
   def reset_board
-    @board = Array.new(9, ' ')
+    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
   def display_board
