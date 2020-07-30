@@ -48,7 +48,7 @@ class Player
   end
   
   def is_valid_move(index)
-    return @@gameBoard.board[index - 1] == ' ' ? true : false
+    return @@gameBoard.board[index - 1] != index.between?(1, 9) && @@gameBoard.board[index - 1] != "X" && @@gameBoard.board[index - 1] != "O"
   end
 
   def insert_into_board(input)
@@ -84,7 +84,7 @@ class Player
 
 		@@gameBoard.display_board
     
-    if @@gameBoard.board.any? { |e| e == ' ' } 
+    if @@gameBoard.board.any? { |e| e.is_a?(Integer)} 
       player_selection
     end
   end
