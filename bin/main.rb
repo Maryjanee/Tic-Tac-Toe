@@ -50,6 +50,11 @@ class Player
   def is_valid_move(index)
     return @@gameBoard.board[index - 1] == ' ' ? true : false
   end
+
+  def insert_into_board(input)
+    @@gameBoard.board[input - 1] = @@play_counter % 2 == 0 ? PLAYER_ONE_TAG : PLAYER_TWO_TAG
+    @@play_counter += 1
+  end
   
   def start_game
     puts "Enter first player's Name"
@@ -69,6 +74,7 @@ class Player
     end
     
     if is_valid_move(input)
+    	insert_into_board(input)
     
 
     else
@@ -76,7 +82,11 @@ class Player
       player_selection
     end
 
-    @@gameBoard.display_board
+		@@gameBoard.display_board
+    
+    if @@gameBoard.board.any? { |e| e == ' ' } 
+      player_selection
+    end
   end
 end
   
