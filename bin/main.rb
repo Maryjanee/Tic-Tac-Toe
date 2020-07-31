@@ -8,107 +8,70 @@
 # 6.check positions for each player
 # 7.check for winner, loser and draw
 # 8. display output
-#
+require './lib/Player.rb'
+require './lib/Board.rb'
 
-class Board
-  attr_reader :board
-
-  def initialize
-    reset_board
-  end
-
-  def reset_board
-    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  end
-
-  def display_board
-    puts '-------------'
-    puts "| #{board[0]} | #{board[1]} | #{board[2]} |"
-    puts '-------------'
-    puts "| #{board[3]} | #{board[4]} | #{board[5]} |"
-    puts '-------------'
-    puts "| #{board[6]} | #{board[7]} | #{board[8]} |"
-    puts '-------------'
-  end
-
+def display_board(board)
+  puts '-------------'
+  puts "| #{board[0]} | #{board[1]} | #{board[2]} |"
+  puts '-------------'
+  puts "| #{board[3]} | #{board[4]} | #{board[5]} |"
+  puts '-------------'
+  puts "| #{board[6]} | #{board[7]} | #{board[8]} |"
+  puts '-------------'
 end
 
-class Player
-  PLAYER_ONE_TAG = 'X'
-  PLAYER_TWO_TAG = 'O'
-  @@player_one
-  @@player_one
-  
-  @@play_counter = 0
-
-  def initialize(gameBoard)
-    @@gameBoard = gameBoard
-  end
-  
-  def current_player()
-    return @@play_counter % 2 == 0 ? @@player_one : @@player_two
-  end
-  
-  def is_valid_move(index)
-    return @@gameBoard.board[index - 1] != index.between?(1, 9) && @@gameBoard.board[index - 1] != "X" && @@gameBoard.board[index - 1] != "O"
-  end
-
-  def insert_into_board(input)
-    @@gameBoard.board[input - 1] = @@play_counter % 2 == 0 ? PLAYER_ONE_TAG : PLAYER_TWO_TAG
-    @@play_counter += 1
-  end
-  
-  def start_game
-    puts "Enter first player's Name"
-    @@player_one = gets.chomp
-    puts "Enter second player's Name"
-    @@player_two = gets.chomp
-    puts "#{@@player_one} you are #{PLAYER_ONE_TAG} \n#{@@player_two} you are #{PLAYER_TWO_TAG}"
-  end
-  
-  def player_selection
-    puts "It's the #{current_player}'s turn, Please Choose a number between 1 - 9 "
-    input = gets.chomp.to_i
-      
-    while input.between?(1, 9) == false
-      puts 'Invalid! Please choose a number between 1 - 9'
-       input = gets.chomp.to_i
-    end
+def player_selection(game_board, player)
+  puts "It's the #{player.current_player}'s turn, Please Choose a number between 1 - 9 "
+  input = gets.chomp.to_i
     
-    if is_valid_move(input)
-    	insert_into_board(input)
-    
+  while input.between?(1, 9) == false
+    puts 'Invalid! Please choose a number between 1 - 9'
+     input = gets.chomp.to_i
+  end
+  
+  if player.is_valid_move(input)
+    player.insert_into_board(input)
+  else
+    puts "Invalid move, try again."
+    player_selection(game_board, player)
+  end
 
-    else
-      puts "Invalid move, try again."
-      player_selection
+  display_board(game_board.board)
+
+  check = (game_board.board.values_at(0, 1, 2).all?("X") || game_board.board.values_at(0, 1, 2).all?("O") || game_board.board.values_at(3, 4, 5).all?("X") || game_board.board.values_at(3, 4, 5).all?("O") || game_board.board.values_at(6, 7, 8).all?("X") || game_board.board.values_at(6, 7, 8).all?("O") || game_board.board.values_at(0, 3, 6).all?("X") || game_board.board.values_at(0, 3, 6).all?("O") || game_board.board.values_at(1, 4, 7).all?("X") || game_board.board.values_at(1, 4, 7).all?("O") || game_board.board.values_at(2, 5, 8).all?("X") || game_board.board.values_at(2, 5, 8).all?("O") || game_board.board.values_at(0, 4, 8).all?("X") || game_board.board.values_at(0, 4, 8).all?("O") || game_board.board.values_at(2, 4, 8).all?("X") || game_board.board.values_at(2, 4, 8).all?("O"))
+  if check
+    x_count = game_board.board.count{|x| x == "X"}
+    o_count = game_board.board.count{|x| x == "O"}
+    if(x_count > o_count) 
+      puts "#{player.player_one} is the winner"
+    else 
+      puts "#{player.player_two} is the winner"
     end
-
-    @@gameBoard.display_board
-
-    check = (@@gameBoard.board.values_at(0, 1, 2).all?("X") || @@gameBoard.board.values_at(0, 1, 2).all?("O") || @@gameBoard.board.values_at(3, 4, 5).all?("X") || @@gameBoard.board.values_at(3, 4, 5).all?("O") || @@gameBoard.board.values_at(6, 7, 8).all?("X") || @@gameBoard.board.values_at(6, 7, 8).all?("O") || @@gameBoard.board.values_at(0, 3, 6).all?("X") || @@gameBoard.board.values_at(0, 3, 6).all?("O") || @@gameBoard.board.values_at(1, 4, 7).all?("X") || @@gameBoard.board.values_at(1, 4, 7).all?("O") || @@gameBoard.board.values_at(2, 5, 8).all?("X") || @@gameBoard.board.values_at(2, 5, 8).all?("O") || @@gameBoard.board.values_at(0, 4, 8).all?("X") || @@gameBoard.board.values_at(0, 4, 8).all?("O") || @@gameBoard.board.values_at(2, 4, 8).all?("X") || @@gameBoard.board.values_at(2, 4, 8).all?("O"))
-   if check
-     x_count = @@gameBoard.board.count{|x| x == "X"}
-     o_count = @@gameBoard.board.count{|x| x == "O"}
-     if(x_count > o_count) 
-      puts "#{@@player_one} is the winner"
-     else 
-      puts "#{@@player_two} is the winner"
-     end
-    elsif ( !check && @@gameBoard.board.any? { |e| e.is_a?(Integer)} )
-      player_selection
+    elsif ( !check && game_board.board.any? { |e| e.is_a?(Integer)} )
+      player_selection(game_board, player)
     else
-    puts "Its a draw"
+      puts "Its a draw"
+    end
   end
-  end
+
+def start_game
+  game_board = Board.new
+  display_board(game_board.board)
+
+  puts "Enter first player's Name"
+  player_one = gets.chomp
+  puts "Enter second player's Name"
+  player_two = gets.chomp
+
+  player = Player.new(game_board, player_one, player_two)
+
+  puts "#{player_one} you are #{player.player_one_tag} \n#{player_two} you are #{player.player_two_tag}"
+
+  player_selection(game_board, player)
 end
-  
- 
 
-board1 = Board.new
-player = Player.new(board1)
-player.start_game
-player.player_selection
+start_game
 
 
 
