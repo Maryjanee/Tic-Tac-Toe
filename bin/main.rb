@@ -82,10 +82,17 @@ class Player
       player_selection
     end
 
-		@@gameBoard.display_board
-    
-    if @@gameBoard.board.any? { |e| e.is_a?(Integer)} 
+    @@gameBoard.display_board
+
+    check = (@@gameBoard.board.values_at(0, 1, 2).all?("X") || @@gameBoard.board.values_at(0, 1, 2).all?("O") || @@gameBoard.board.values_at(3, 4, 5).all?("X") || @@gameBoard.board.values_at(3, 4, 5).all?("O") || @@gameBoard.board.values_at(6, 7, 8).all?("X") || @@gameBoard.board.values_at(6, 7, 8).all?("O") || @@gameBoard.board.values_at(0, 3, 6).all?("X") || @@gameBoard.board.values_at(0, 3, 6).all?("O") || @@gameBoard.board.values_at(1, 4, 7).all?("X") || @@gameBoard.board.values_at(1, 4, 7).all?("O") || @@gameBoard.board.values_at(2, 5, 8).all?("X") || @@gameBoard.board.values_at(2, 5, 8).all?("O") || @@gameBoard.board.values_at(0, 4, 8).all?("X") || @@gameBoard.board.values_at(0, 4, 8).all?("O") || @@gameBoard.board.values_at(2, 4, 8).all?("X") || @@gameBoard.board.values_at(2, 4, 8).all?("O"))
+    if ( !check )
       player_selection
+    elsif check
+      puts "We have a winner"
+    elsif ( !check && @@gameBoard.board.any? { |e| e.is_a?(Integer)} )
+      player_selection
+    else
+      puts "Its a draw"
     end
   end
 end
