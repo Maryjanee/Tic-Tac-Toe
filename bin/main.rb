@@ -4,8 +4,8 @@
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
 # rubocop:disable Metrics/PerceivedComplexity
-require './lib/Player.rb'
-require './lib/Board.rb'
+require './lib/player.rb'
+require './lib/board.rb'
 
 def display_board(board)
   puts '-------------'
