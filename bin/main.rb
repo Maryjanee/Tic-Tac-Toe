@@ -1,13 +1,33 @@
 #!/usr/bin/env ruby
-# rubocop:disable Layout/LineLength
-# rubocop:disable Metrics/AbcSize
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
 # rubocop:disable Metrics/PerceivedComplexity
 require_relative '../lib/player.rb'
 require_relative '../lib/board.rb'
 
+puts ''
+puts '            •••••••••••••••••••••••••••••••••••••••••••••••••••'
+puts ''
+puts '                WELCOME TO THE ULTIMATE TIC TAC TOE GAME :D'
+puts ''
+puts '            •••••••••••••••••••••••••••••••••••••••••••••••••••'
+puts ''
+
+puts ' '
+puts '                       RULES OF THE GAME'
+puts ' '
+puts '1. The game is played on a grid that\'s 3 squares by 3 squares.'
+puts ' '
+puts '2. It takes two players to play the game and you are both assigned  different tags'
+puts ' '
+puts '3. The first player to match up tags row-wise, column-wise or diagonally is the winner.'
+puts ' '
+puts '4. As soon as the board is full and no winner emerges, the game is declared a draw'
+puts ' '
+puts ' '
+
 def display_board(board)
+  
   puts '-------------'
   puts "| #{board[0]} | #{board[1]} | #{board[2]} |"
   puts '-------------'
@@ -35,8 +55,8 @@ def player_selection(gameboard, player)
 
   display_board(gameboard.board)
 
- check = player.winner_checker(gameboard.board)
- 
+  check = player.winner_checker(gameboard.board)
+
   if check
     x_count = gameboard.board.count { |x| x == 'X' }
     o_count = gameboard.board.count { |x| x == 'O' }
@@ -55,18 +75,18 @@ def player_selection(gameboard, player)
   end
 end
 
+
 def start_game
   gameboard = Board.new
-  display_board(gameboard.board)
-
   puts "Enter first player's Name"
   player_one = gets.chomp
   puts "Enter second player's Name"
   player_two = gets.chomp
-
   player = Player.new(gameboard, player_one, player_two)
 
   puts "#{player_one} you are #{player.player_one_tag} \n#{player_two} you are #{player.player_two_tag}"
+  
+  display_board(gameboard.board)
 
   player_selection(gameboard, player)
 end
@@ -74,15 +94,12 @@ end
 def play_again
   puts 'Would you like to play again? Y/N '
   answer = gets.chomp.upcase
-  
-  if answer == 'Y'
-    start_game
-  end
+
+  start_game if answer == 'Y'
 end
 
 start_game
-# rubocop:enable Layout/LineLength
+
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Metrics/CyclomaticComplexity
 # rubocop:enable Metrics/PerceivedComplexity
-# rubocop:enable Metrics/AbcSize
