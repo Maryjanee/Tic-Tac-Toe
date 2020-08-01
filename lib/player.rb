@@ -1,4 +1,6 @@
 # rubocop:disable Layout/LineLength
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/PerceivedComplexity
 class Player
   attr_reader :player_one_tag, :player_one
   attr_reader :player_two_tag, :player_two
@@ -32,3 +34,5 @@ class Player
 end
 
 # rubocop:enable Layout/LineLength
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/PerceivedComplexity
