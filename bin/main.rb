@@ -78,10 +78,22 @@ end
 
 def start_game
   gameboard = Board.new
+  
   puts "Enter first player's Name"
   player_one = gets.chomp
+  
+  while !!(player_one =~ /^(\s*|\d+)$/)
+    puts "please enter a valid name"
+    player_one = gets.chomp
+  end
+  
   puts "Enter second player's Name"
   player_two = gets.chomp
+  
+  while !!(player_two =~ /^(\s*|\d+)$/)
+    puts "please enter a valid name"
+    player_two = gets.chomp
+  end
   player = Player.new(gameboard, player_one, player_two)
 
   puts "#{player_one} you are #{player.player_one_tag} \n#{player_two} you are #{player.player_two_tag}"
