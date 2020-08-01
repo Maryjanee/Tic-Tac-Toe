@@ -4,8 +4,8 @@
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/CyclomaticComplexity
 # rubocop:disable Metrics/PerceivedComplexity
-require './lib/player.rb'
-require './lib/board.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/board.rb'
 
 def display_board(board)
   puts '-------------'
@@ -45,6 +45,8 @@ def player_selection(gameboard, player)
       puts "#{player.player_two} is the winner"
     end
   elsif !check && gameboard.board.any? { |e| e.is_a?(Integer) }
+    player_selection(gameboard, player)
+  elsif !check
     player_selection(gameboard, player)
   else
     puts 'Its a draw'
