@@ -33,7 +33,7 @@ This project was completed under microverse remote software development curricul
 
 ## 🔴 Live Demo <a name = "ldl"></a>
 
-[![Run on Repl.it](https://repl.it/badge/github/)](https://repl.it/)
+[![Run on Repl.it](https://repl.it/badge/github/Maryjanee/Tic-Tac-Toe)](https://repl.it/@ahmadchata/Tic-Tac-Toe#bin/main.rb)
 
 ## 🔨 Setup <a name = "set"></a>
 
