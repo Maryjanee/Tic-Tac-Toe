@@ -49,7 +49,9 @@ This project was completed under microverse remote software development curricul
 ## How to Play <a name = "how_to"></a>
 
 - Install Game.
-- run bin/main.rb
+- Open a terminal and cd into the game directory
+- Type ```bin/main.rb``` in the terminal and hit enter.
+
 Tic-tac-toe (American English), noughts and crosses (British English), is a game for two players, and each of the players are assigned tags(X and O), each player take turns marking the spaces in a 3×3 grid with their assigned tag. The player who succeeds in placing three of their tag in a horizontal, vertical, or diagonal row is the winner.
 
 In order to win the game, a player must place three of their marks in a horizontal, vertical, or diagonal row.
