@@ -60,8 +60,8 @@ def player_selection(gameboard, player)
   check = player.winner_checker(gameboard.board)
 
   if check
-    x_count = gameboard.board.count { |x| x == 'X' }
-    o_count = gameboard.board.count { |x| x == 'O' }
+    x_count = gameboard.board.count { |x| x == '✘' }
+    o_count = gameboard.board.count { |x| x == '◯' }
     if x_count > o_count
       puts "#{player.player_one} is the winner"
       play_again

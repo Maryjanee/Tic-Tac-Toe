@@ -18,7 +18,7 @@ This application is a command line implementation of the classic Tic tac toe gam
 
 ## About <a name = "about"></a>
 
-This project was completed under microverse remote software development curriculum. The requirement was to create a Tic-Tac-Toe game.
+Tic-tac-toe (American English), noughts and crosses (British English), is a game for two players, and each of the players are assigned tags(X and O) ,each player take turns marking the spaces in a 3×3 grid with their assigned tag. The player who succeeds in placing three of their tags in a horizontal, vertical, or diagonal row is the winner.
 
 ## Screenshot <a name = "screen"></a>
 
@@ -33,7 +33,7 @@ This project was completed under microverse remote software development curricul
 
 ## 🔴 Live Demo <a name = "ldl"></a>
 
-[![Run on Repl.it](https://repl.it/badge/github/Maryjanee/Tic-Tac-Toe)](https://repl.it/@ahmadchata/Tic-Tac-Toe#bin/main.rb)
+[[Live Demo Link](https://repl.it/@MaryjaneA/Tic-Tac-Toe#bin/main.rb)
 
 ## 🔨 Setup <a name = "set"></a>
 
@@ -52,15 +52,12 @@ This project was completed under microverse remote software development curricul
 - Open a terminal and cd into the game directory
 - Type ```bin/main.rb``` in the terminal and hit enter.
 
-Tic-tac-toe (American English), noughts and crosses (British English), is a game for two players, and each of the players are assigned tags(X and O), each player take turns marking the spaces in a 3×3 grid with their assigned tag. The player who succeeds in placing three of their tag in a horizontal, vertical, or diagonal row is the winner.
-
-In order to win the game, a player must place three of their marks in a horizontal, vertical, or diagonal row.
 
 ## ✒️ Authors <a name = "author"></a>
 
 👤 **Maryjane Akpagbue**
 
-- Github: [maryjanee](https://github.com/Maryjanee)
+- Github: [Maryjanee](https://github.com/Maryjanee)
 - Twitter: [Maryjane Akpagbue](https://twitter.com/alfredmaryjane)
 - Linkedin: [Maryjane Akpagbue](https://www.linkedin.com/in/maryjane-akpagbue-1500b7173/)
 
@@ -70,9 +67,14 @@ In order to win the game, a player must place three of their marks in a horizont
 - Twitter: [ahmadchata](https://twitter.com/ahmadchata)
 - Linkedin: [Ahmad Chata](https://www.linkedin.com/in/ahmad-chata-957b9b51/)
 
-## 🤝 Contributing
+## Contributing
 
-Contributions, issues and feature requests are welcome!
+- To contribute to this project:
+- Fork this repository & clone locally.
+- Create an upstream remote and sync your local copy.
+- create a new branch.
+- Push your code to your origin repository.
+- Create a new Pull Request .
 
 Feel free to check the [issues page](https://github.com/Maryjanee/Tic-Tac-Toe/issues).
 

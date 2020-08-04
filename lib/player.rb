@@ -8,9 +8,9 @@ class Player
   def initialize(gameboard, player_one, player_two)
     @gameboard = gameboard
     @player_one = player_one
-    @player_one_tag = 'X'
+    @player_one_tag = '✘'
     @player_two = player_two
-    @player_two_tag = 'O'
+    @player_two_tag = '◯'
     @play_counter = 0
   end
 
@@ -19,7 +19,7 @@ class Player
   end
 
   def valid_move(index)
-    @gameboard.board[index - 1] != index.between?(1, 9) && @gameboard.board[index - 1] != 'X' && @gameboard.board[index - 1] != 'O'
+    @gameboard.board[index - 1] != index.between?(1, 9) && @gameboard.board[index - 1] != '✘' && @gameboard.board[index - 1] != '◯'
   end
 
   def insert_into_board(input)
@@ -28,8 +28,7 @@ class Player
   end
 
   def winner_checker(gameboard)
-    check = (gameboard.values_at(0, 1, 2).all?('X') || gameboard.values_at(0, 1, 2).all?('O') || gameboard.values_at(3, 4, 5).all?('X') || gameboard.values_at(3, 4, 5).all?('O') || gameboard.values_at(6, 7, 8).all?('X') || gameboard.values_at(6, 7, 8).all?('O') || gameboard.values_at(0, 3, 6).all?('X') || gameboard.values_at(0, 3, 6).all?('O') || gameboard.values_at(1, 4, 7).all?('X') || gameboard.values_at(1, 4, 7).all?('O') || gameboard.values_at(2, 5, 8).all?('X') || gameboard.values_at(2, 5, 8).all?('O') || gameboard.values_at(0, 4, 8).all?('X') || gameboard.values_at(0, 4, 8).all?('O') || gameboard.values_at(2, 4, 8).all?('X') || gameboard.values_at(2, 4, 8).all?('O'))
-    check
+    (gameboard.values_at(0, 1, 2).all?('✘') || gameboard.values_at(0, 1, 2).all?('◯') || gameboard.values_at(3, 4, 5).all?('✘') || gameboard.values_at(3, 4, 5).all?('◯') || gameboard.values_at(6, 7, 8).all?('✘') || gameboard.values_at(6, 7, 8).all?('◯') || gameboard.values_at(0, 3, 6).all?('✘') || gameboard.values_at(0, 3, 6).all?('◯') || gameboard.values_at(1, 4, 7).all?('✘') || gameboard.values_at(1, 4, 7).all?('◯') || gameboard.values_at(2, 5, 8).all?('✘') || gameboard.values_at(2, 5, 8).all?('◯') || gameboard.values_at(0, 4, 8).all?('✘') || gameboard.values_at(0, 4, 8).all?('◯') || gameboard.values_at(2, 4, 8).all?('✘') || gameboard.values_at(2, 4, 8).all?('◯'))
   end
 end
 
