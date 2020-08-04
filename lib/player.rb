@@ -28,12 +28,7 @@ class Player
   end
 
   def winner_checker(gameboard)
-<<<<<<< HEAD
-    check = (gameboard.values_at(0, 1, 2).all?('✘') || gameboard.values_at(0, 1, 2).all?('◯') || gameboard.values_at(3, 4, 5).all?('✘') || gameboard.values_at(3, 4, 5).all?('◯') || gameboard.values_at(6, 7, 8).all?('✘') || gameboard.values_at(6, 7, 8).all?('◯') || gameboard.values_at(0, 3, 6).all?('✘') || gameboard.values_at(0, 3, 6).all?('◯') || gameboard.values_at(1, 4, 7).all?('✘') || gameboard.values_at(1, 4, 7).all?('◯') || gameboard.values_at(2, 5, 8).all?('✘') || gameboard.values_at(2, 5, 8).all?('◯') || gameboard.values_at(0, 4, 8).all?('✘') || gameboard.values_at(0, 4, 8).all?('◯') || gameboard.values_at(2, 4, 8).all?('✘') || gameboard.values_at(2, 4, 8).all?('◯'))
-=======
-    check = (gameboard.values_at(0, 1, 2).all?('X') || gameboard.values_at(0, 1, 2).all?('O') || gameboard.values_at(3, 4, 5).all?('X') || gameboard.values_at(3, 4, 5).all?('O') || gameboard.values_at(6, 7, 8).all?('X') || gameboard.values_at(6, 7, 8).all?('O') || gameboard.values_at(0, 3, 6).all?('X') || gameboard.values_at(0, 3, 6).all?('O') || gameboard.values_at(1, 4, 7).all?('X') || gameboard.values_at(1, 4, 7).all?('O') || gameboard.values_at(2, 5, 8).all?('X') || gameboard.values_at(2, 5, 8).all?('O') || gameboard.values_at(0, 4, 8).all?('X') || gameboard.values_at(0, 4, 8).all?('O') || gameboard.values_at(2, 4, 6).all?('X') || gameboard.values_at(2, 4, 6).all?('O'))
-    check
->>>>>>> 1308eaeeb65facac0c863fca81c1ce4a55cddf8c
+    (gameboard.values_at(0, 1, 2).all?('✘') || gameboard.values_at(0, 1, 2).all?('◯') || gameboard.values_at(3, 4, 5).all?('✘') || gameboard.values_at(3, 4, 5).all?('◯') || gameboard.values_at(6, 7, 8).all?('✘') || gameboard.values_at(6, 7, 8).all?('◯') || gameboard.values_at(0, 3, 6).all?('✘') || gameboard.values_at(0, 3, 6).all?('◯') || gameboard.values_at(1, 4, 7).all?('✘') || gameboard.values_at(1, 4, 7).all?('◯') || gameboard.values_at(2, 5, 8).all?('✘') || gameboard.values_at(2, 5, 8).all?('◯') || gameboard.values_at(0, 4, 8).all?('✘') || gameboard.values_at(0, 4, 8).all?('◯') || gameboard.values_at(2, 4, 8).all?('✘') || gameboard.values_at(2, 4, 8).all?('◯'))
   end
 end
 
