@@ -18,6 +18,8 @@ This application is a command line implementation of the classic Tic tac toe gam
 ## About <a name = "about"></a>
 
 Tic-tac-toe (American English), noughts and crosses (British English), is a game for two players, and each of the players are assigned tags(X and O) ,each player take turns marking the spaces in a 3×3 grid with their assigned tag. The player who succeeds in placing three of their tags in a horizontal, vertical, or diagonal row is the winner.
+
+
 ![X wins this game ](assets/tic-tac-toe.gif)
 
 
@@ -32,7 +34,7 @@ Tic-tac-toe (American English), noughts and crosses (British English), is a game
 - Ruby
 
 
-[[Play Online](https://repl.it/@MaryjaneA/Tic-Tac-Toe#bin/main.rb)
+[Play Online](https://repl.it/@MaryjaneA/Tic-Tac-Toe#bin/main.rb)
 
 ## Installation
 
@@ -44,6 +46,7 @@ You can download the [project](https://github.com/Maryjanee/Tic-Tac-Toe) or clon
 You will need to execute the main.rb file located inside the bin folder. please follow the [instructions](https://commandercoriander.net/blog/2013/02/16/making-a-ruby-script-executable/) here to make the script executable
 
 Open the terminal and navigate to the folder containing the tic-tac-toe game. Once you are inside, your terminal should look like this: ```User/<folder>/tic-tac-toe/```. You can type ```bin/main.rb``` to run the game.
+
 
 
 ## Game Instructions
@@ -58,12 +61,14 @@ Once you run the game, follow the prompts and instructions inside the terminal.
 5. Each player should type a valid cell number and enter it to mark the board.
 6. A valid cell is one which has no player's tag and it is represented by a number between 1 and 9.
 7. After each turn, you will see the updated board with the selections of the players and the available cells left.
-    ```
 8. A player can only mark an empty cell. If they choose an already marked cell they will be prompted again.
 9. The first player to match a succession of 3 of their assigned symbol (O's or X's) in a row, column or diagonal wins!
 10. If all of the cells are filled with a symbol and no player matched 3 symbols, the game ends in a draw.
 
+
+
 ## ✒️ Authors <a name = "author"></a>
+
 
 👤 **Maryjane Akpagbue**
 
@@ -71,11 +76,16 @@ Once you run the game, follow the prompts and instructions inside the terminal.
 - Twitter: [Maryjane Akpagbue](https://twitter.com/alfredmaryjane)
 - Linkedin: [Maryjane Akpagbue](https://www.linkedin.com/in/maryjane-akpagbue-1500b7173/)
 
+
+
 👤 **Ahmad Chata**
 
 - Github: [ahmadchata](https://github.com/ahmadchata)
 - Twitter: [ahmadchata](https://twitter.com/ahmadchata)
 - Linkedin: [Ahmad Chata](https://www.linkedin.com/in/ahmad-chata-957b9b51/)
+
+
+
 
 ## Contributing
 
@@ -88,9 +98,13 @@ Once you run the game, follow the prompts and instructions inside the terminal.
 
 Feel free to check the [issues page](https://github.com/Maryjanee/Tic-Tac-Toe/issues).
 
+
+
 ## 👍 Show your support
 
 Give a ⭐️ if you like this project!
+
+
 
 ## :clap: Acknowledgements
 
