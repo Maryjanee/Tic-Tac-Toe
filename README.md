@@ -10,8 +10,7 @@ This application is a command line implementation of the classic Tic tac toe gam
 <a text-align="center" href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#how_to">How to Play</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#screen">Screenshot</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#ins">Installing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#set">Setup</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#ins">Game Instructions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#with">Built with</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#ldl">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#author">Author</a>
@@ -19,6 +18,8 @@ This application is a command line implementation of the classic Tic tac toe gam
 ## About <a name = "about"></a>
 
 Tic-tac-toe (American English), noughts and crosses (British English), is a game for two players, and each of the players are assigned tags(X and O) ,each player take turns marking the spaces in a 3×3 grid with their assigned tag. The player who succeeds in placing three of their tags in a horizontal, vertical, or diagonal row is the winner.
+![X wins this game ](assets/tic-tac-toe.gif)
+
 
 ## Screenshot <a name = "screen"></a>
 
@@ -28,30 +29,39 @@ Tic-tac-toe (American English), noughts and crosses (British English), is a game
 
 
 ## 🔧 Built with<a name = "with"></a>
-
 - Ruby
 
-## 🔴 Live Demo <a name = "ldl"></a>
 
-[[Live Demo Link](https://repl.it/@MaryjaneA/Tic-Tac-Toe#bin/main.rb)
+[[Play Online](https://repl.it/@MaryjaneA/Tic-Tac-Toe#bin/main.rb)
 
-## 🔨 Setup <a name = "set"></a>
+## Installation
 
-- Fork the repo to your remote repository.
-- Clone or download the repository to a local directory on your computer.
+You need to have Ruby installed in your computer to run this file: 
+https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby
 
-## 🛠 Installing <a name = "ins"></a>
+You can download the [project](https://github.com/Maryjanee/Tic-Tac-Toe) or clone the project ```git clone git@github.com:Maryjanee/Tic-Tac-Toe.git```
 
-- run npm install to install the dependencies for the project
-- run bundle init to create a Gemfile
-- run bundle install to install the gems
+You will need to execute the main.rb file located inside the bin folder. please follow the [instructions](https://commandercoriander.net/blog/2013/02/16/making-a-ruby-script-executable/) here to make the script executable
 
-## How to Play <a name = "how_to"></a>
+Open the terminal and navigate to the folder containing the tic-tac-toe game. Once you are inside, your terminal should look like this: ```User/<folder>/tic-tac-toe/```. You can type ```bin/main.rb``` to run the game.
 
-- Install Game.
-- Open a terminal and cd into the game directory
-- Type ```bin/main.rb``` in the terminal and hit enter.
 
+## Game Instructions
+
+Once you run the game, follow the prompts and instructions inside the terminal. 
+
+1. The game is played on the command line.
+
+2. You will be prompted to type each player's name.
+3. The first player will play with the 'x' tag, and the second player with the 'o' tag
+4. The game will prompt which player turn's it is.
+5. Each player should type a valid cell number and enter it to mark the board.
+6. A valid cell is one which has no player's tag and it is represented by a number between 1 and 9.
+7. After each turn, you will see the updated board with the selections of the players and the available cells left.
+    ```
+8. A player can only mark an empty cell. If they choose an already marked cell they will be prompted again.
+9. The first player to match a succession of 3 of their assigned symbol (O's or X's) in a row, column or diagonal wins!
+10. If all of the cells are filled with a symbol and no player matched 3 symbols, the game ends in a draw.
 
 ## ✒️ Authors <a name = "author"></a>
 
