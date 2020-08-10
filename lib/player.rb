@@ -19,11 +19,11 @@ class Player
   end
 
   def valid_move(index)
-    @gameboard.board[index - 1] != index.between?(1, 9) && @gameboard.board[index - 1] != '✘' && @gameboard.board[index - 1] != '◯'
+    @gameboard[index - 1] != index.between?(1, 9) && @gameboard[index - 1] != '✘' && @gameboard[index - 1] != '◯'
   end
 
   def insert_into_board(input)
-    @gameboard.board[input - 1] = @play_counter.even? ? @player_one_tag : @player_two_tag
+    @gameboard[input - 1] = @play_counter.even? ? @player_one_tag : @player_two_tag
     @play_counter += 1
   end
 
