@@ -52,7 +52,7 @@ class Game
         play_again
       end
     elsif !check && gameboard.any? { |e| e.is_a?(Integer) }
-    player_selection(gameboard, player)
+      player_selection(gameboard, player)
     else
       puts 'Its a draw'
       play_again
