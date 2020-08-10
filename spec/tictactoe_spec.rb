@@ -12,7 +12,7 @@ describe 'Player' do
       player = Player.new(gameboard, player_one, player_two)
       expect(player.winner_checker(gameboard)).to eql(true)
     end
-    
+
     it 'returns false when the board is full ' do
       player = Player.new(['✘', '◯', '✘', '◯', '✘', '✘', '◯', '✘', '◯'], player_one, player_two)
       expect(player.winner_checker(['✘', '◯', '✘', '◯', '✘', '✘', '◯', '✘', '◯'])).to be(false)
@@ -28,9 +28,9 @@ describe 'Player' do
       player = Player.new(['✘', '✘', 2, 3, '◯', '◯', 7, 8, 9], player_one, player_two)
       expect(player.valid_move(8)).to eql(true)
     end
-    
+
     it 'returns false when the board is not full and an invalid move is chosen ' do
-      player = Player.new(['✘','◯', 3, '✘', 5, 6, 7, 8, 9], player_one, player_two)
+      player = Player.new(['✘', '◯', 3, '✘', 5, 6, 7, 8, 9], player_one, player_two)
       expect(player.valid_move(9)).to be(true)
     end
 
