@@ -37,13 +37,13 @@ class Game
       player_selection(gameboard, player)
     end
 
-    display_board(gameboard.board)
+    display_board(gameboard)
 
-    check = player.winner_checker(gameboard.board)
+    check = player.winner_checker(gameboard)
 
     if check
-      x_count = gameboard.board.count { |x| x == '✘' }
-      o_count = gameboard.board.count { |x| x == '◯' }
+      x_count = gameboard.count { |x| x == '✘' }
+      o_count = gameboard.count { |x| x == '◯' }
       if x_count > o_count
         puts "#{player.player_one} is the winner"
         play_again
@@ -51,7 +51,7 @@ class Game
         puts "#{player.player_two} is the winner"
         play_again
       end
-    elsif !check && gameboard.board.any? { |e| e.is_a?(Integer) }
+    elsif !check && gameboard.any? { |e| e.is_a?(Integer) }
       player_selection(gameboard, player)
     else
       puts 'Its a draw'
@@ -60,7 +60,7 @@ class Game
   end
 
   def start_game
-    gameboard = Board.new
+    gameboard = Board.new.board
 
     puts "Enter first player's Name"
     player_one = gets.chomp
@@ -81,7 +81,7 @@ class Game
 
     puts "#{player_one} you are #{player.player_one_tag} \n#{player_two} you are #{player.player_two_tag}"
 
-    display_board(gameboard.board)
+    display_board(gameboard)
 
     player_selection(gameboard, player)
   end
